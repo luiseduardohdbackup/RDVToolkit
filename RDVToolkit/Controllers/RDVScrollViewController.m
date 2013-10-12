@@ -1,4 +1,4 @@
-// RDVAppDelegate.h
+// RDVScrollViewController.m
 // RDVToolkit
 //
 // Copyright (c) 2013 Robert Dimitrov
@@ -21,10 +21,18 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import "RDVScrollViewController.h"
 
-@interface RDVAppDelegate : UIResponder <UIApplicationDelegate>
+@implementation RDVScrollViewController
 
-@property (strong, nonatomic) UIWindow *window;
+- (void)loadView {
+    CGRect applicationFrame = [[UIScreen mainScreen] applicationFrame];
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:applicationFrame];
+    [scrollView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
+    [scrollView setBackgroundColor:[UIColor whiteColor]];
+    [scrollView setDelegate:self];
+    [self setScrollView:scrollView];
+    [self setView:scrollView];
+}
 
 @end

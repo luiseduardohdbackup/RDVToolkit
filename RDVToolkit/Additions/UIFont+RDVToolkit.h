@@ -1,4 +1,4 @@
-// RDVAppDelegate.h
+// UIFont+RDVToolkit.h
 // RDVToolkit
 //
 // Copyright (c) 2013 Robert Dimitrov
@@ -23,8 +23,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RDVAppDelegate : UIResponder <UIApplicationDelegate>
+@interface UIFont (RDVToolkit)
 
-@property (strong, nonatomic) UIWindow *window;
++ (UIFont *)rdv_helveticaNeueLightWithSize:(CGFloat)size;
 
 @end

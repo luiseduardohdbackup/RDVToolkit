@@ -1,4 +1,4 @@
-// RDVAppDelegate.h
+// RDVMenuViewController.h
 // RDVToolkit
 //
 // Copyright (c) 2013 Robert Dimitrov
@@ -23,8 +23,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RDVAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
+@interface RDVMenuViewController : UITableViewController
 
 @end

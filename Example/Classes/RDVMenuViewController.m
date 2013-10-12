@@ -1,4 +1,4 @@
-// RDVAppDelegate.h
+// RDVMenuViewController.m
 // RDVToolkit
 //
 // Copyright (c) 2013 Robert Dimitrov
@@ -21,10 +21,43 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import "RDVMenuViewController.h"
 
-@interface RDVAppDelegate : UIResponder <UIApplicationDelegate>
+@interface RDVMenuViewController ()
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic) NSArray *elements;
+
+@end
+
+@implementation RDVMenuViewController
+
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        self.title = @"RDVToolkit";
+        
+        _elements = @[@"Cell 1", @"Cell 2", @"Cell 3"];
+    }
+    return self;
+}
+
+#pragma mark - Table view
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [[self elements] count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    
+    [[cell textLabel] setText:[[self elements] objectAtIndex:indexPath.row]];
+    
+    return cell;
+}
 
 @end

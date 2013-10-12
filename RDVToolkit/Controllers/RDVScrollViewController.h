@@ -1,4 +1,4 @@
-// RDVAppDelegate.h
+// RDVScrollViewController.h
 // RDVToolkit
 //
 // Copyright (c) 2013 Robert Dimitrov
@@ -23,8 +23,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RDVAppDelegate : UIResponder <UIApplicationDelegate>
+@interface RDVScrollViewController : UIViewController <UIScrollViewDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic) UIScrollView *scrollView;
 
 @end

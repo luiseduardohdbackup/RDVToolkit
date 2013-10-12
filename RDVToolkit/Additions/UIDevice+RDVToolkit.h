@@ -1,4 +1,4 @@
-// RDVAppDelegate.h
+// UIDevice+RDVToolkit.h
 // RDVToolkit
 //
 // Copyright (c) 2013 Robert Dimitrov
@@ -23,8 +23,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RDVAppDelegate : UIResponder <UIApplicationDelegate>
+@interface UIDevice (RDVToolkit)
 
-@property (strong, nonatomic) UIWindow *window;
++ (BOOL)rdv_isIOS7;
 
 @end

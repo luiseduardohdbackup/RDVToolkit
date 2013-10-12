@@ -1,4 +1,4 @@
-// RDVAppDelegate.h
+// RDVConstants.h
 // RDVToolkit
 //
 // Copyright (c) 2013 Robert Dimitrov
@@ -21,10 +21,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#ifdef DEBUG
+#define DLog(...) NSLog(__VA_ARGS__)
+#else
+#define DLog(...) /* */
+#endif
+#define ALog(...) NSLog(__VA_ARGS__)
 
-@interface RDVAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
-@end
+#define RDVRectMake(x, y, width, height) \
+CGRectMake(roundf(x), roundf(y), roundf(width), roundf(height))

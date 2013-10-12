@@ -1,4 +1,4 @@
-// RDVAppDelegate.h
+// RDVToolkit.h
 // RDVToolkit
 //
 // Copyright (c) 2013 Robert Dimitrov
@@ -21,10 +21,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import "RDVConstants.h"
+#import "UIFont+RDVToolkit.h"
+#import "UIDevice+RDVToolkit.h"
+#import "UIViewController+RDVToolkit.h"
+#import "UITableViewCell+RDVToolkit.h"
+#import "RDVScrollViewController.h"
 
-@interface RDVAppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-
-@end

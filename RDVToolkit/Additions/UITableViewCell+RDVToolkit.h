@@ -1,4 +1,4 @@
-// RDVAppDelegate.h
+// UITableViewCell+RDVToolkit.h
 // RDVToolkit
 //
 // Copyright (c) 2013 Robert Dimitrov
@@ -23,8 +23,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RDVAppDelegate : UIResponder <UIApplicationDelegate>
+@interface UITableViewCell (RDVToolkit)
 
-@property (strong, nonatomic) UIWindow *window;
+- (void)rdv_setBackgroundColor:(UIColor *)color;
+- (void)rdv_setHighlightedBackgroundColor:(UIColor *)color;
+- (void)rdv_setupAccessoryImage:(UIImage *)image;
 
 @end

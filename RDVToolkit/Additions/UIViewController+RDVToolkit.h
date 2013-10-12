@@ -1,4 +1,4 @@
-// RDVAppDelegate.h
+// UIViewController+RDVToolkit.h
 // RDVToolkit
 //
 // Copyright (c) 2013 Robert Dimitrov
@@ -23,8 +23,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RDVAppDelegate : UIResponder <UIApplicationDelegate>
+@interface UIViewController (RDVToolkit)
 
-@property (strong, nonatomic) UIWindow *window;
+- (void)rdv_setNavigationBarTitleImage:(UIImage *)image;
 
 @end
