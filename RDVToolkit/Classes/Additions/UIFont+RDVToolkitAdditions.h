@@ -1,4 +1,4 @@
-// RDVMenuViewController.h
+// UIFont+RDVToolkit.h
 // RDVToolkit
 //
 // Copyright (c) 2013 Robert Dimitrov
@@ -23,6 +23,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RDVMenuViewController : RDVTableViewController
+@interface UIFont (RDVToolkitAdditions)
+
++ (UIFont *)rdv_helveticaNeueLightWithSize:(CGFloat)size;
 
 @end

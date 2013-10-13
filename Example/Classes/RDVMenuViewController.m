@@ -26,6 +26,7 @@
 @interface RDVMenuViewController ()
 
 @property (nonatomic) NSArray *elements;
+@property (nonatomic) RDVSelectionView *selectionView;
 
 @end
 
@@ -37,7 +38,7 @@
     if (self) {
         self.title = @"RDVToolkit";
         
-        _elements = @[@"Cell 1", @"Cell 2", @"Cell 3"];
+        _elements = @[@"Display error message", @"Display success message", @"Dissplay information message"];
     }
     return self;
 }
@@ -58,6 +59,47 @@
     [[cell textLabel] setText:[[self elements] objectAtIndex:indexPath.row]];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        [RDVNotificationView addErrorNotificationWithMessage:@"Error message here"
+                                                     forView:self.view
+                                                 siblingView:self.tableView
+                                                    animated:YES
+                                               shouldDismiss:YES
+                                             completionBlock:NULL];
+    } else if (indexPath.row == 1) {
+        [RDVNotificationView addSuccessNotificationWithMessage:@"Success message here"
+                                                       forView:self.view
+                                                   siblingView:self.tableView
+                                                      animated:YES
+                                                 shouldDismiss:YES
+                                               completionBlock:NULL];
+    } else {
+        [RDVNotificationView addInformationNotificationWithMessage:@"Information message here"
+                                                           forView:self.view
+                                                       siblingView:self.tableView
+                                                          animated:YES
+                                                     shouldDismiss:YES
+                                                   completionBlock:NULL];
+    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if (![self selectionView]) {
+        [self setSelectionView:[[RDVSelectionView alloc] initWithFrame:RDVRectMake(0, 0,
+                                                                                   CGRectGetWidth([[self tableView] frame]),
+                                                                                   44.0f)]];
+        [[self selectionView] setItems:@[@"First", @"Second", @"Third"]];
+    }
+    
+    return [self selectionView];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 44.0f;
 }
 
 @end

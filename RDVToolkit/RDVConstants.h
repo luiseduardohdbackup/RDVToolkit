@@ -30,3 +30,12 @@
 
 #define RDVRectMake(x, y, width, height) \
 CGRectMake(roundf(x), roundf(y), roundf(width), roundf(height))
+
+#ifndef RDVTOOLKIT_RDVCONSTANTS__H
+#define RDVTOOLKIT_RDVCONSTANTS__H
+
+typedef void (^simpleBlock)(void);
+typedef void (^boolBlock)(BOOL status);
+typedef void (^errorBlock)(NSError *error);
+
+#endif

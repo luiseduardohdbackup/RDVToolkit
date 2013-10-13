@@ -1,4 +1,4 @@
-// UIDevice+RDVToolkit.h
+// UIViewController+RDVToolkit.h
 // RDVToolkit
 //
 // Copyright (c) 2013 Robert Dimitrov
@@ -23,8 +23,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIDevice (RDVToolkit)
+@interface UIViewController (RDVToolkitAdditions)
 
-+ (BOOL)rdv_isIOS7;
+- (void)rdv_setNavigationBarTitleImage:(UIImage *)image;
 
 @end

@@ -21,9 +21,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "UIFont+RDVToolkit.h"
+#import "UIFont+RDVToolkitAdditions.h"
 
-@implementation UIFont (RDVToolkit)
+@implementation UIFont (RDVToolkitAdditions)
 
 + (UIFont *)rdv_helveticaNeueLightWithSize:(CGFloat)size {
     return [UIFont fontWithName:@"HelveticaNeue-Light" size:size];

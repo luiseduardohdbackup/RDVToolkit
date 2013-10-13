@@ -8,11 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B4192737180931A900CDA378 /* RDVMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4192736180931A900CDA378 /* RDVMenuViewController.m */; };
-		B419273C18093F2D00CDA378 /* UIFont+RDVToolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = B419273B18093F2D00CDA378 /* UIFont+RDVToolkit.m */; };
-		B419273F1809405C00CDA378 /* UIDevice+RDVToolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = B419273E1809405C00CDA378 /* UIDevice+RDVToolkit.m */; };
-		B41927421809415C00CDA378 /* UIViewController+RDVToolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = B41927411809415C00CDA378 /* UIViewController+RDVToolkit.m */; };
-		B41927451809430C00CDA378 /* UITableViewCell+RDVToolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = B41927441809430C00CDA378 /* UITableViewCell+RDVToolkit.m */; };
-		B41927481809446B00CDA378 /* RDVScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B41927471809446B00CDA378 /* RDVScrollViewController.m */; };
 		B42CD15318092D45004032A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B42CD14C18092D45004032A4 /* InfoPlist.strings */; };
 		B42CD15418092D45004032A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B42CD14E18092D45004032A4 /* main.m */; };
 		B42CD15A18092DCA004032A4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B42CD15918092DCA004032A4 /* Default-568h@2x.png */; };
@@ -22,23 +17,21 @@
 		B43C52041807F4C5004A50CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B43C52031807F4C5004A50CE /* Foundation.framework */; };
 		B43C52061807F4C5004A50CE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B43C52051807F4C5004A50CE /* CoreGraphics.framework */; };
 		B43C52081807F4C5004A50CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B43C52071807F4C5004A50CE /* UIKit.framework */; };
+		B44D341B180A784E0026501A /* selectionview_selection_indicator.png in Resources */ = {isa = PBXBuildFile; fileRef = B44D3419180A784E0026501A /* selectionview_selection_indicator.png */; };
+		B44D341C180A784E0026501A /* selectionview_selection_indicator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B44D341A180A784E0026501A /* selectionview_selection_indicator@2x.png */; };
+		B463851D1809F95A00ED7454 /* UIDevice+RDVToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B46385091809F95A00ED7454 /* UIDevice+RDVToolkitAdditions.m */; };
+		B463851E1809F95A00ED7454 /* UIFont+RDVToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B463850B1809F95A00ED7454 /* UIFont+RDVToolkitAdditions.m */; };
+		B463851F1809F95A00ED7454 /* UITableViewCell+RDVToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B463850D1809F95A00ED7454 /* UITableViewCell+RDVToolkitAdditions.m */; };
+		B46385201809F95A00ED7454 /* UIViewController+RDVToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B463850F1809F95A00ED7454 /* UIViewController+RDVToolkitAdditions.m */; };
+		B46385211809F95A00ED7454 /* RDVScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46385121809F95A00ED7454 /* RDVScrollViewController.m */; };
+		B46385221809F95A00ED7454 /* RDVTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B46385141809F95A00ED7454 /* RDVTableViewController.m */; };
+		B46385231809F95A00ED7454 /* RDVNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B46385171809F95A00ED7454 /* RDVNotificationView.m */; };
+		B46385241809F95A00ED7454 /* RDVSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B46385191809F95A00ED7454 /* RDVSelectionView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B4192735180931A900CDA378 /* RDVMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVMenuViewController.h; sourceTree = "<group>"; };
 		B4192736180931A900CDA378 /* RDVMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVMenuViewController.m; sourceTree = "<group>"; };
-		B419273818093E4C00CDA378 /* RDVConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RDVConstants.h; sourceTree = "<group>"; };
-		B419273918093EBA00CDA378 /* RDVToolkit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RDVToolkit.h; sourceTree = "<group>"; };
-		B419273A18093F2D00CDA378 /* UIFont+RDVToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+RDVToolkit.h"; sourceTree = "<group>"; };
-		B419273B18093F2D00CDA378 /* UIFont+RDVToolkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+RDVToolkit.m"; sourceTree = "<group>"; };
-		B419273D1809405C00CDA378 /* UIDevice+RDVToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+RDVToolkit.h"; sourceTree = "<group>"; };
-		B419273E1809405C00CDA378 /* UIDevice+RDVToolkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+RDVToolkit.m"; sourceTree = "<group>"; };
-		B41927401809415C00CDA378 /* UIViewController+RDVToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RDVToolkit.h"; sourceTree = "<group>"; };
-		B41927411809415C00CDA378 /* UIViewController+RDVToolkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RDVToolkit.m"; sourceTree = "<group>"; };
-		B41927431809430C00CDA378 /* UITableViewCell+RDVToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+RDVToolkit.h"; sourceTree = "<group>"; };
-		B41927441809430C00CDA378 /* UITableViewCell+RDVToolkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+RDVToolkit.m"; sourceTree = "<group>"; };
-		B41927461809446B00CDA378 /* RDVScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVScrollViewController.h; sourceTree = "<group>"; };
-		B41927471809446B00CDA378 /* RDVScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVScrollViewController.m; sourceTree = "<group>"; };
 		B42CD14D18092D45004032A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B42CD14E18092D45004032A4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B42CD15118092D45004032A4 /* RDVToolkit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RDVToolkit-Info.plist"; sourceTree = "<group>"; };
@@ -53,6 +46,26 @@
 		B43C52051807F4C5004A50CE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B43C52071807F4C5004A50CE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B43C521C1807F4C5004A50CE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B44D3419180A784E0026501A /* selectionview_selection_indicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectionview_selection_indicator.png; sourceTree = "<group>"; };
+		B44D341A180A784E0026501A /* selectionview_selection_indicator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selectionview_selection_indicator@2x.png"; sourceTree = "<group>"; };
+		B46385081809F95A00ED7454 /* UIDevice+RDVToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+RDVToolkitAdditions.h"; sourceTree = "<group>"; };
+		B46385091809F95A00ED7454 /* UIDevice+RDVToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+RDVToolkitAdditions.m"; sourceTree = "<group>"; };
+		B463850A1809F95A00ED7454 /* UIFont+RDVToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+RDVToolkitAdditions.h"; sourceTree = "<group>"; };
+		B463850B1809F95A00ED7454 /* UIFont+RDVToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+RDVToolkitAdditions.m"; sourceTree = "<group>"; };
+		B463850C1809F95A00ED7454 /* UITableViewCell+RDVToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+RDVToolkitAdditions.h"; sourceTree = "<group>"; };
+		B463850D1809F95A00ED7454 /* UITableViewCell+RDVToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+RDVToolkitAdditions.m"; sourceTree = "<group>"; };
+		B463850E1809F95A00ED7454 /* UIViewController+RDVToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RDVToolkitAdditions.h"; sourceTree = "<group>"; };
+		B463850F1809F95A00ED7454 /* UIViewController+RDVToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RDVToolkitAdditions.m"; sourceTree = "<group>"; };
+		B46385111809F95A00ED7454 /* RDVScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVScrollViewController.h; sourceTree = "<group>"; };
+		B46385121809F95A00ED7454 /* RDVScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVScrollViewController.m; sourceTree = "<group>"; };
+		B46385131809F95A00ED7454 /* RDVTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVTableViewController.h; sourceTree = "<group>"; };
+		B46385141809F95A00ED7454 /* RDVTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVTableViewController.m; sourceTree = "<group>"; };
+		B46385161809F95A00ED7454 /* RDVNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVNotificationView.h; sourceTree = "<group>"; };
+		B46385171809F95A00ED7454 /* RDVNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVNotificationView.m; sourceTree = "<group>"; };
+		B46385181809F95A00ED7454 /* RDVSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVSelectionView.h; sourceTree = "<group>"; };
+		B46385191809F95A00ED7454 /* RDVSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVSelectionView.m; sourceTree = "<group>"; };
+		B463851A1809F95A00ED7454 /* RDVConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVConstants.h; sourceTree = "<group>"; };
+		B463851B1809F95A00ED7454 /* RDVToolkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVToolkit.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,37 +101,6 @@
 				B42CD15218092D45004032A4 /* RDVToolkit-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		B42CD15B18092EDF004032A4 /* Additions */ = {
-			isa = PBXGroup;
-			children = (
-				B419273A18093F2D00CDA378 /* UIFont+RDVToolkit.h */,
-				B419273B18093F2D00CDA378 /* UIFont+RDVToolkit.m */,
-				B419273D1809405C00CDA378 /* UIDevice+RDVToolkit.h */,
-				B419273E1809405C00CDA378 /* UIDevice+RDVToolkit.m */,
-				B41927401809415C00CDA378 /* UIViewController+RDVToolkit.h */,
-				B41927411809415C00CDA378 /* UIViewController+RDVToolkit.m */,
-				B41927431809430C00CDA378 /* UITableViewCell+RDVToolkit.h */,
-				B41927441809430C00CDA378 /* UITableViewCell+RDVToolkit.m */,
-			);
-			path = Additions;
-			sourceTree = "<group>";
-		};
-		B42CD15C18092EDF004032A4 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				B41927461809446B00CDA378 /* RDVScrollViewController.h */,
-				B41927471809446B00CDA378 /* RDVScrollViewController.m */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		B42CD15D18092EF1004032A4 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		B42CD15E18092F51004032A4 /* Classes */ = {
@@ -166,13 +148,68 @@
 		B43C52091807F4C5004A50CE /* RDVToolkit */ = {
 			isa = PBXGroup;
 			children = (
-				B42CD15B18092EDF004032A4 /* Additions */,
-				B42CD15C18092EDF004032A4 /* Controllers */,
-				B42CD15D18092EF1004032A4 /* Views */,
-				B419273818093E4C00CDA378 /* RDVConstants.h */,
-				B419273918093EBA00CDA378 /* RDVToolkit.h */,
+				B463851B1809F95A00ED7454 /* RDVToolkit.h */,
+				B463851A1809F95A00ED7454 /* RDVConstants.h */,
+				B46385061809F95A00ED7454 /* Classes */,
+				B463851C1809F95A00ED7454 /* Resources */,
 			);
 			path = RDVToolkit;
+			sourceTree = "<group>";
+		};
+		B46385061809F95A00ED7454 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B46385071809F95A00ED7454 /* Additions */,
+				B46385101809F95A00ED7454 /* Controllers */,
+				B46385151809F95A00ED7454 /* Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B46385071809F95A00ED7454 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				B46385081809F95A00ED7454 /* UIDevice+RDVToolkitAdditions.h */,
+				B46385091809F95A00ED7454 /* UIDevice+RDVToolkitAdditions.m */,
+				B463850A1809F95A00ED7454 /* UIFont+RDVToolkitAdditions.h */,
+				B463850B1809F95A00ED7454 /* UIFont+RDVToolkitAdditions.m */,
+				B463850C1809F95A00ED7454 /* UITableViewCell+RDVToolkitAdditions.h */,
+				B463850D1809F95A00ED7454 /* UITableViewCell+RDVToolkitAdditions.m */,
+				B463850E1809F95A00ED7454 /* UIViewController+RDVToolkitAdditions.h */,
+				B463850F1809F95A00ED7454 /* UIViewController+RDVToolkitAdditions.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		B46385101809F95A00ED7454 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B46385111809F95A00ED7454 /* RDVScrollViewController.h */,
+				B46385121809F95A00ED7454 /* RDVScrollViewController.m */,
+				B46385131809F95A00ED7454 /* RDVTableViewController.h */,
+				B46385141809F95A00ED7454 /* RDVTableViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B46385151809F95A00ED7454 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B46385161809F95A00ED7454 /* RDVNotificationView.h */,
+				B46385171809F95A00ED7454 /* RDVNotificationView.m */,
+				B46385181809F95A00ED7454 /* RDVSelectionView.h */,
+				B46385191809F95A00ED7454 /* RDVSelectionView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B463851C1809F95A00ED7454 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B44D3419180A784E0026501A /* selectionview_selection_indicator.png */,
+				B44D341A180A784E0026501A /* selectionview_selection_indicator@2x.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,7 +267,9 @@
 				B42CD16418092F73004032A4 /* LICENSE in Resources */,
 				B42CD15318092D45004032A4 /* InfoPlist.strings in Resources */,
 				B42CD16518092F73004032A4 /* README.md in Resources */,
+				B44D341C180A784E0026501A /* selectionview_selection_indicator@2x.png in Resources */,
 				B42CD15A18092DCA004032A4 /* Default-568h@2x.png in Resources */,
+				B44D341B180A784E0026501A /* selectionview_selection_indicator.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,14 +280,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B41927451809430C00CDA378 /* UITableViewCell+RDVToolkit.m in Sources */,
-				B41927421809415C00CDA378 /* UIViewController+RDVToolkit.m in Sources */,
-				B419273F1809405C00CDA378 /* UIDevice+RDVToolkit.m in Sources */,
+				B46385231809F95A00ED7454 /* RDVNotificationView.m in Sources */,
 				B42CD15418092D45004032A4 /* main.m in Sources */,
+				B46385221809F95A00ED7454 /* RDVTableViewController.m in Sources */,
+				B463851E1809F95A00ED7454 /* UIFont+RDVToolkitAdditions.m in Sources */,
 				B42CD16118092F51004032A4 /* RDVAppDelegate.m in Sources */,
+				B463851F1809F95A00ED7454 /* UITableViewCell+RDVToolkitAdditions.m in Sources */,
 				B4192737180931A900CDA378 /* RDVMenuViewController.m in Sources */,
-				B41927481809446B00CDA378 /* RDVScrollViewController.m in Sources */,
-				B419273C18093F2D00CDA378 /* UIFont+RDVToolkit.m in Sources */,
+				B463851D1809F95A00ED7454 /* UIDevice+RDVToolkitAdditions.m in Sources */,
+				B46385211809F95A00ED7454 /* RDVScrollViewController.m in Sources */,
+				B46385241809F95A00ED7454 /* RDVSelectionView.m in Sources */,
+				B46385201809F95A00ED7454 /* UIViewController+RDVToolkitAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

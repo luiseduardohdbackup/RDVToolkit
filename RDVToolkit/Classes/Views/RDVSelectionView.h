@@ -1,4 +1,4 @@
-// UITableViewCell+RDVToolkit.m
+// RDVSelectionView.h
 // RDVToolkit
 //
 // Copyright (c) 2013 Robert Dimitrov
@@ -21,27 +21,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "UITableViewCell+RDVToolkit.h"
-#import "RDVConstants.h"
+#import <UIKit/UIKit.h>
 
-@implementation UITableViewCell (RDVToolkit)
+@protocol RDVSelectionViewDelegate;
 
-- (void)rdv_setBackgroundColor:(UIColor *)color {
-    UIView *backgroundView = [[UIView alloc] initWithFrame:self.backgroundView.frame];
-    [backgroundView setBackgroundColor:color];
-    [self setBackgroundView:backgroundView];
-}
+@interface RDVSelectionView : UIView
 
-- (void)rdv_setHighlightedBackgroundColor:(UIColor *)color {
-    UIView *selectedBackgroundView = [[UIView alloc] initWithFrame:self.selectedBackgroundView.frame];
-    [selectedBackgroundView setBackgroundColor:color];
-    [self setSelectedBackgroundView:selectedBackgroundView];
-}
+@property (nonatomic) NSArray *items;
 
-- (void)rdv_setupAccessoryImage:(UIImage *)image {
-    UIView *accessoryView = [[UIImageView alloc] initWithImage:image];
-    [accessoryView setFrame:RDVRectMake(0, 0, image.size.width, image.size.height)];
-    [self setAccessoryView:accessoryView];
-}
+@property (nonatomic) UIImageView *indicatorImage;
+@property id <RDVSelectionViewDelegate> delegate;
+@property NSInteger selectedIndex;
 
+- (void)setSelectedIndex:(NSInteger)selectedIndex animated:(BOOL)animated;
+
+@end
+
+@protocol RDVSelectionViewDelegate <NSObject>
+@optional
+- (BOOL)selectionView:(RDVSelectionView *)header shouldSelectIndex:(NSInteger)index;
+- (void)selectionView:(RDVSelectionView *)header willSelectIndex:(NSInteger)index;
+- (void)selectionView:(RDVSelectionView *)header didSelectIndex:(NSInteger)index;
 @end

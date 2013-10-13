@@ -1,4 +1,4 @@
-// UITableViewCell+RDVToolkit.h
+// UITableViewCell+RDVToolkit.m
 // RDVToolkit
 //
 // Copyright (c) 2013 Robert Dimitrov
@@ -21,12 +21,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import "UITableViewCell+RDVToolkitAdditions.h"
+#import "RDVConstants.h"
 
-@interface UITableViewCell (RDVToolkit)
+@implementation UITableViewCell (RDVToolkitAdditions)
 
-- (void)rdv_setBackgroundColor:(UIColor *)color;
-- (void)rdv_setHighlightedBackgroundColor:(UIColor *)color;
-- (void)rdv_setupAccessoryImage:(UIImage *)image;
+- (void)rdv_setBackgroundColor:(UIColor *)color {
+    UIView *backgroundView = [[UIView alloc] initWithFrame:self.backgroundView.frame];
+    [backgroundView setBackgroundColor:color];
+    [self setBackgroundView:backgroundView];
+}
+
+- (void)rdv_setHighlightedBackgroundColor:(UIColor *)color {
+    UIView *selectedBackgroundView = [[UIView alloc] initWithFrame:self.selectedBackgroundView.frame];
+    [selectedBackgroundView setBackgroundColor:color];
+    [self setSelectedBackgroundView:selectedBackgroundView];
+}
+
+- (void)rdv_setupAccessoryImage:(UIImage *)image {
+    UIView *accessoryView = [[UIImageView alloc] initWithImage:image];
+    [accessoryView setFrame:RDVRectMake(0, 0, image.size.width, image.size.height)];
+    [self setAccessoryView:accessoryView];
+}
 
 @end

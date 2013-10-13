@@ -1,4 +1,4 @@
-// UIFont+RDVToolkit.h
+// RDVTableViewController.h
 // RDVToolkit
 //
 // Copyright (c) 2013 Robert Dimitrov
@@ -23,8 +23,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIFont (RDVToolkit)
+@interface RDVTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-+ (UIFont *)rdv_helveticaNeueLightWithSize:(CGFloat)size;
+@property (nonatomic) UITableView *tableView;
+@property(nonatomic) BOOL clearsSelectionOnViewWillAppear;
+@property (nonatomic,retain) UIRefreshControl *refreshControl;
+
+- (id)initWithStyle:(UITableViewStyle)style;
 
 @end

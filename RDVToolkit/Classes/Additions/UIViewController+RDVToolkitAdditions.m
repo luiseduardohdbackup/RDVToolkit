@@ -1,4 +1,4 @@
-// RDVScrollViewController.m
+// UIViewController+RDVToolkit.m
 // RDVToolkit
 //
 // Copyright (c) 2013 Robert Dimitrov
@@ -21,18 +21,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "RDVScrollViewController.h"
+#import "UIViewController+RDVToolkitAdditions.h"
 
-@implementation RDVScrollViewController
+@implementation UIViewController (RDVToolkitAdditions)
 
-- (void)loadView {
-    CGRect applicationFrame = [[UIScreen mainScreen] applicationFrame];
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:applicationFrame];
-    [scrollView setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight];
-    [scrollView setBackgroundColor:[UIColor whiteColor]];
-    [scrollView setDelegate:self];
-    [self setScrollView:scrollView];
-    [self setView:scrollView];
+- (void)rdv_setNavigationBarTitleImage:(UIImage *)image {
+    UIView *titleView = [[UIImageView alloc] initWithImage:image];
+    [[self navigationItem] setTitleView:titleView];
 }
 
 @end

@@ -21,9 +21,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "UIDevice+RDVToolkit.h"
+#import "UIDevice+RDVToolkitAdditions.h"
 
-@implementation UIDevice (RDVToolkit)
+@implementation UIDevice (RDVToolkitAdditions)
 
 + (BOOL)rdv_isIOS7 {
     return [[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0;

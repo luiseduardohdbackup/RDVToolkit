@@ -1,4 +1,4 @@
-// UIViewController+RDVToolkit.h
+// UITableViewCell+RDVToolkit.h
 // RDVToolkit
 //
 // Copyright (c) 2013 Robert Dimitrov
@@ -23,8 +23,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (RDVToolkit)
+@interface UITableViewCell (RDVToolkitAdditions)
 
-- (void)rdv_setNavigationBarTitleImage:(UIImage *)image;
+- (void)rdv_setBackgroundColor:(UIColor *)color;
+- (void)rdv_setHighlightedBackgroundColor:(UIColor *)color;
+- (void)rdv_setupAccessoryImage:(UIImage *)image;
 
 @end
