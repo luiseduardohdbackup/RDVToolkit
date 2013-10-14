@@ -35,6 +35,9 @@
 
 - (void)setSelectedIndex:(NSInteger)selectedIndex animated:(BOOL)animated;
 
+- (NSDictionary *)titleAttributes;
+- (void)setTitleAttributes:(NSDictionary *)attributes;
+
 @end
 
 @protocol RDVSelectionViewDelegate <NSObject>

@@ -25,6 +25,7 @@
 
 @interface RDVSelectionView () {
     NSInteger _selectedIndex;
+    NSDictionary *_titleAttributes;
 }
 @end
 
@@ -41,6 +42,18 @@
         [self addSubview:_indicatorImage];
         
         _selectedIndex = -1;
+        
+        if ([[[UIDevice currentDevice] systemVersion] integerValue] >= 7.0) {
+            _titleAttributes = @{
+                                           NSFontAttributeName: [UIFont systemFontOfSize:16],
+                                           NSForegroundColorAttributeName: [UIColor blueColor],
+                                           };
+        } else {
+            _titleAttributes = @{
+                                           UITextAttributeFont: [UIFont systemFontOfSize:16],
+                                           UITextAttributeTextColor: [UIColor blueColor],
+                                           };
+        }
     }
     return self;
 }
@@ -48,7 +61,6 @@
 - (void)drawRect:(CGRect)rect {
     CGSize frameSize = self.frame.size;
     NSInteger itemsCount = [[self items] count];
-    UIFont *font = [UIFont systemFontOfSize:16];
     
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
@@ -57,17 +69,43 @@
     
     NSInteger labelIndex = 0;
     for (NSString *item in [self items]) {
-        CGSize labelSize = [item sizeWithFont:font
-                             constrainedToSize:CGSizeMake(frameSize.width / [[self items] count], 20)];
-        
-        CGFloat positionOffset = (frameSize.width / itemsCount) * labelIndex;
-        
-        CGFloat startingX = frameSize.width / (itemsCount * 2) - labelSize.width / 2 + positionOffset;
-        CGFloat startingY = (frameSize.height - labelSize.height) / 2;
-        
-        [item drawInRect:RDVRectMake(startingX, startingY, labelSize.width, labelSize.height)
-                 withFont:font
-            lineBreakMode:NSLineBreakByTruncatingTail];
+        if ([[[UIDevice currentDevice] systemVersion] integerValue] >= 7.0) {
+            CGSize labelSize = [item boundingRectWithSize:CGSizeMake(frameSize.width, 20)
+                                                    options:NSStringDrawingUsesLineFragmentOrigin
+                                                 attributes:[self titleAttributes]
+                                                    context:nil].size;
+            
+            CGFloat positionOffset = (frameSize.width / itemsCount) * labelIndex;
+            
+            CGFloat startingX = frameSize.width / (itemsCount * 2) - labelSize.width / 2 + positionOffset;
+            CGFloat startingY = (frameSize.height - labelSize.height) / 2;
+            
+            [item drawInRect:RDVRectMake(startingX, startingY, labelSize.width, labelSize.height)
+              withAttributes:[self titleAttributes]];
+        } else {
+            CGSize labelSize = [item sizeWithFont:[self titleAttributes][UITextAttributeFont]
+                                constrainedToSize:CGSizeMake(frameSize.width / [[self items] count], 20)];
+            
+            CGFloat positionOffset = (frameSize.width / itemsCount) * labelIndex;
+            
+            CGFloat startingX = frameSize.width / (itemsCount * 2) - labelSize.width / 2 + positionOffset;
+            CGFloat startingY = (frameSize.height - labelSize.height) / 2;
+            
+            UIOffset titleShadowOffset = [self.titleAttributes[UITextAttributeTextShadowOffset] UIOffsetValue];
+            
+            CGContextSetFillColorWithColor(context, [self.titleAttributes[UITextAttributeTextColor] CGColor]);
+            
+            UIColor *shadowColor = self.titleAttributes[UITextAttributeTextShadowColor];
+            
+            if (shadowColor) {
+                CGContextSetShadowWithColor(context, CGSizeMake(titleShadowOffset.horizontal, titleShadowOffset.vertical),
+                                            1.0, [shadowColor CGColor]);
+            }
+            
+            [item drawInRect:RDVRectMake(startingX, startingY, labelSize.width, labelSize.height)
+                    withFont:[self titleAttributes][UITextAttributeFont]
+               lineBreakMode:NSLineBreakByTruncatingTail];
+        }
         
         labelIndex++;
     }
@@ -76,6 +114,20 @@
 }
 
 #pragma mark - Methods
+
+- (NSDictionary *)titleAttributes {
+    @synchronized(_titleAttributes) {
+        return _titleAttributes;
+    }
+}
+
+- (void)setTitleAttributes:(NSDictionary *)attributes {
+    @synchronized(_titleAttributes) {
+        if (attributes && ![_titleAttributes isEqual:attributes]) {
+            _titleAttributes = [attributes copy];
+        }
+    }
+}
 
 - (void)setSelectedIndex:(NSInteger)selectedIndex animated:(BOOL)animated {
     if (_selectedIndex == selectedIndex) {
@@ -87,8 +139,6 @@
             return;
         }
     }
-    
-    NSLog(@"from %d to %d", _selectedIndex, selectedIndex);
     
     _selectedIndex = selectedIndex;
     
