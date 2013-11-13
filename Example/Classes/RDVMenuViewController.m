@@ -22,6 +22,7 @@
 // THE SOFTWARE.
 
 #import "RDVMenuViewController.h"
+#import "RDVMenuCell.h"
 
 @interface RDVMenuViewController ()
 
@@ -38,9 +39,16 @@
     if (self) {
         self.title = @"RDVToolkit";
         
-        _elements = @[@"Display error message", @"Display success message", @"Dissplay information message"];
+        _elements = @[@"Display error message", @"Display success message", @"Display information message", @"Circular image"];
     }
     return self;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self.tableView setRowHeight:60.0f];
+    [self.tableView setSectionHeaderHeight:44.0f];
 }
 
 #pragma mark - Table view
@@ -50,10 +58,24 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    UITableViewCell *cell = nil;
+    if (indexPath.row == 3) {
+        NSString *CellIdentifier = @"ImageCell";
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (!cell) {
+            cell = [[RDVMenuCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
+        
+        if (indexPath.row == 3) {
+            NSURL *url = [NSURL URLWithString:@"http://www.maxmotors.com/wp-content/uploads/2012/09/2014-Mustang-Under-Bridge.jpg"];
+            [[(RDVMenuCell *)cell circularImageView] setImageWithURL:url];
+        }
+    } else {
+        NSString *CellIdentifier = @"NormalCell";
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
     }
     
     [[cell textLabel] setText:[[self elements] objectAtIndex:indexPath.row]];
@@ -76,7 +98,7 @@
                                                       animated:YES
                                                  shouldDismiss:YES
                                                completionBlock:NULL];
-    } else {
+    } else if (indexPath.row == 2) {
         [RDVNotificationView addInformationNotificationWithMessage:@"Information message here"
                                                            forView:self.view
                                                        siblingView:self.tableView
@@ -96,10 +118,6 @@
     }
     
     return [self selectionView];
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 44.0f;
 }
 
 @end

@@ -27,9 +27,11 @@
 #import "UIDevice+RDVToolkitAdditions.h"
 #import "UIViewController+RDVToolkitAdditions.h"
 #import "UITableViewCell+RDVToolkitAdditions.h"
+#import "UIColor+RDVToolkitAdditions.h"
 // Controllers
 #import "RDVScrollViewController.h"
 #import "RDVTableViewController.h"
 // Views
 #import "RDVNotificationView.h"
 #import "RDVSelectionView.h"
+#import "RDVCircularImageView.h"

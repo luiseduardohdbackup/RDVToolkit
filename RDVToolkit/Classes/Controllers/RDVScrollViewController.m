@@ -25,6 +25,16 @@
 
 @implementation RDVScrollViewController
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
+            [self setEdgesForExtendedLayout:UIRectEdgeBottom|UIRectEdgeLeft|UIRectEdgeRight];
+        }
+    }
+    return self;
+}
+
 - (void)loadView {
     CGRect applicationFrame = [[UIScreen mainScreen] applicationFrame];
     

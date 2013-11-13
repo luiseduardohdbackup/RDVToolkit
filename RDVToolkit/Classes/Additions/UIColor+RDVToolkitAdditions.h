@@ -1,4 +1,4 @@
-// RDVTableViewController.h
+// UIColor+RDVToolkitAdditions.h
 // RDVToolkit
 //
 // Copyright (c) 2013 Robert Dimitrov
@@ -23,12 +23,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RDVTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface UIColor (RDVToolkitAdditions)
 
-@property (nonatomic) UITableView *tableView;
-@property(nonatomic) BOOL clearsSelectionOnViewWillAppear;
-@property (nonatomic,retain) UIRefreshControl *refreshControl;
++ (UIColor *)rdv_colorWithHex:(NSString *)hexString;
++ (UIColor *)rdv_colorWithHex:(NSString *)hexString alpha:(CGFloat)alpha;
 
-- (id)initWithStyle:(UITableViewStyle)style;
+- (CGFloat)rdv_redValue;
+- (CGFloat)rdv_greenValue;
+- (CGFloat)rdv_blueValue;
+- (CGFloat)rdv_alphaValue;
+- (NSString *)rdv_hexString;
 
 @end

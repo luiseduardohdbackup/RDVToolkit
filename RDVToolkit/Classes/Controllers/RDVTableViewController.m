@@ -34,6 +34,10 @@
     self = [super init];
     if (self) {
         _tableViewStyle = style;
+        
+        if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
+            [self setEdgesForExtendedLayout:UIRectEdgeBottom|UIRectEdgeLeft|UIRectEdgeRight];
+        }
     }
     return self;
 }

@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B401FC6D183170250089FC4C /* UIColor+RDVToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B401FC6C183170250089FC4C /* UIColor+RDVToolkitAdditions.m */; };
 		B4192737180931A900CDA378 /* RDVMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4192736180931A900CDA378 /* RDVMenuViewController.m */; };
+		B42421BF1834271200B22E88 /* RDVMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B42421BE1834271200B22E88 /* RDVMenuCell.m */; };
+		B42421C21834273300B22E88 /* RDVCircularImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B42421C11834273300B22E88 /* RDVCircularImageView.m */; };
 		B42CD15318092D45004032A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B42CD14C18092D45004032A4 /* InfoPlist.strings */; };
 		B42CD15418092D45004032A4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B42CD14E18092D45004032A4 /* main.m */; };
 		B42CD15A18092DCA004032A4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B42CD15918092DCA004032A4 /* Default-568h@2x.png */; };
@@ -30,8 +33,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B401FC6B183170250089FC4C /* UIColor+RDVToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RDVToolkitAdditions.h"; sourceTree = "<group>"; };
+		B401FC6C183170250089FC4C /* UIColor+RDVToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RDVToolkitAdditions.m"; sourceTree = "<group>"; };
 		B4192735180931A900CDA378 /* RDVMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVMenuViewController.h; sourceTree = "<group>"; };
 		B4192736180931A900CDA378 /* RDVMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVMenuViewController.m; sourceTree = "<group>"; };
+		B42421BD1834271200B22E88 /* RDVMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVMenuCell.h; sourceTree = "<group>"; };
+		B42421BE1834271200B22E88 /* RDVMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVMenuCell.m; sourceTree = "<group>"; };
+		B42421C01834273300B22E88 /* RDVCircularImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVCircularImageView.h; sourceTree = "<group>"; };
+		B42421C11834273300B22E88 /* RDVCircularImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVCircularImageView.m; sourceTree = "<group>"; };
 		B42CD14D18092D45004032A4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B42CD14E18092D45004032A4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B42CD15118092D45004032A4 /* RDVToolkit-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RDVToolkit-Info.plist"; sourceTree = "<group>"; };
@@ -110,6 +119,8 @@
 				B42CD16018092F51004032A4 /* RDVAppDelegate.m */,
 				B4192735180931A900CDA378 /* RDVMenuViewController.h */,
 				B4192736180931A900CDA378 /* RDVMenuViewController.m */,
+				B42421BD1834271200B22E88 /* RDVMenuCell.h */,
+				B42421BE1834271200B22E88 /* RDVMenuCell.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -177,6 +188,8 @@
 				B463850D1809F95A00ED7454 /* UITableViewCell+RDVToolkitAdditions.m */,
 				B463850E1809F95A00ED7454 /* UIViewController+RDVToolkitAdditions.h */,
 				B463850F1809F95A00ED7454 /* UIViewController+RDVToolkitAdditions.m */,
+				B401FC6B183170250089FC4C /* UIColor+RDVToolkitAdditions.h */,
+				B401FC6C183170250089FC4C /* UIColor+RDVToolkitAdditions.m */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -195,6 +208,8 @@
 		B46385151809F95A00ED7454 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B42421C01834273300B22E88 /* RDVCircularImageView.h */,
+				B42421C11834273300B22E88 /* RDVCircularImageView.m */,
 				B46385161809F95A00ED7454 /* RDVNotificationView.h */,
 				B46385171809F95A00ED7454 /* RDVNotificationView.m */,
 				B46385181809F95A00ED7454 /* RDVSelectionView.h */,
@@ -283,9 +298,12 @@
 				B46385231809F95A00ED7454 /* RDVNotificationView.m in Sources */,
 				B42CD15418092D45004032A4 /* main.m in Sources */,
 				B46385221809F95A00ED7454 /* RDVTableViewController.m in Sources */,
+				B42421BF1834271200B22E88 /* RDVMenuCell.m in Sources */,
 				B463851E1809F95A00ED7454 /* UIFont+RDVToolkitAdditions.m in Sources */,
 				B42CD16118092F51004032A4 /* RDVAppDelegate.m in Sources */,
+				B401FC6D183170250089FC4C /* UIColor+RDVToolkitAdditions.m in Sources */,
 				B463851F1809F95A00ED7454 /* UITableViewCell+RDVToolkitAdditions.m in Sources */,
+				B42421C21834273300B22E88 /* RDVCircularImageView.m in Sources */,
 				B4192737180931A900CDA378 /* RDVMenuViewController.m in Sources */,
 				B463851D1809F95A00ED7454 /* UIDevice+RDVToolkitAdditions.m in Sources */,
 				B46385211809F95A00ED7454 /* RDVScrollViewController.m in Sources */,
