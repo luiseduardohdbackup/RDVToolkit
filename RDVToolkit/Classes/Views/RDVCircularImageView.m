@@ -96,6 +96,11 @@
 #pragma mark - Networking
 
 - (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholderImage {
+    if (placeholderImage) {
+        [self setImage:placeholderImage];
+        [self setNeedsDisplay];
+    }
+    
     [self cancelImageRequestOperation];
     
     [self setData:[[NSMutableData alloc] init]];
