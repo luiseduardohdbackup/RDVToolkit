@@ -24,7 +24,7 @@
 #import "RDVMenuViewController.h"
 #import "RDVMenuCell.h"
 
-@interface RDVMenuViewController ()
+@interface RDVMenuViewController () <RDVAlertViewDelegate>
 
 @property (nonatomic) NSArray *elements;
 @property (nonatomic) RDVSelectionView *selectionView;
@@ -39,7 +39,8 @@
     if (self) {
         self.title = @"RDVToolkit";
         
-        _elements = @[@"Display error message", @"Display success message", @"Display information message", @"Circular image"];
+        _elements = @[@"Display error message", @"Display success message", @"Display information message",
+                      @"Circular image", @"Show Alert View"];
     }
     return self;
 }
@@ -105,6 +106,13 @@
                                                           animated:YES
                                                      shouldDismiss:YES
                                                    completionBlock:NULL];
+    } else if (indexPath.row == 4) {
+        RDVAlertView *alertView = [[RDVAlertView alloc] initWithTitle:@"Sample title"
+                                                              message:@"Example not so long message string"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancel"
+                                                    otherButtonTitles:@"Done", nil];
+        [alertView show];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

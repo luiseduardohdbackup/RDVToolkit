@@ -35,3 +35,4 @@
 #import "RDVNotificationView.h"
 #import "RDVSelectionView.h"
 #import "RDVCircularImageView.h"
+#import "RDVAlertView.h"

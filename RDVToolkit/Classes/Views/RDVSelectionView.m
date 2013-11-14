@@ -49,13 +49,26 @@
                                            NSForegroundColorAttributeName: [UIColor blueColor],
                                            };
         } else {
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
             _titleAttributes = @{
                                            UITextAttributeFont: [UIFont systemFontOfSize:16],
                                            UITextAttributeTextColor: [UIColor blueColor],
                                            };
+#endif
         }
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(deviceDidChangeOrientation:)
+                                                     name:UIDeviceOrientationDidChangeNotification
+                                                   object:nil];
     }
     return self;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIDeviceOrientationDidChangeNotification
+                                                  object:nil];
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -83,6 +96,7 @@
             [item drawInRect:RDVRectMake(startingX, startingY, labelSize.width, labelSize.height)
               withAttributes:[self titleAttributes]];
         } else {
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
             CGSize labelSize = [item sizeWithFont:[self titleAttributes][UITextAttributeFont]
                                 constrainedToSize:CGSizeMake(frameSize.width / [[self items] count], 20)];
             
@@ -105,6 +119,7 @@
             [item drawInRect:RDVRectMake(startingX, startingY, labelSize.width, labelSize.height)
                     withFont:[self titleAttributes][UITextAttributeFont]
                lineBreakMode:NSLineBreakByTruncatingTail];
+#endif
         }
         
         labelIndex++;
@@ -130,10 +145,6 @@
 }
 
 - (void)setSelectedIndex:(NSInteger)selectedIndex animated:(BOOL)animated {
-    if (_selectedIndex == selectedIndex) {
-        return;
-    }
-    
     if ([[self delegate] respondsToSelector:@selector(selectionView:shouldSelectIndex:)]) {
         if (![[self delegate] selectionView:self shouldSelectIndex:selectedIndex]) {
             return;
@@ -188,6 +199,12 @@
     _items = [items copy];
     
     [self setSelectedIndex:0];
+}
+
+#pragma mark - Rotation handling
+
+- (void)deviceDidChangeOrientation:(NSNotification *)notification {
+    [self setSelectedIndex:[self selectedIndex]];
 }
 
 #pragma mark - Touch handling

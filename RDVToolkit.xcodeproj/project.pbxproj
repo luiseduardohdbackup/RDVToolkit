@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62B313CD1834BB7500EBB68E /* RDVAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B313CC1834BB7500EBB68E /* RDVAlertView.m */; };
+		62B313CF18351B1200EBB68E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B313CE18351B1200EBB68E /* QuartzCore.framework */; };
 		B401FC6D183170250089FC4C /* UIColor+RDVToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B401FC6C183170250089FC4C /* UIColor+RDVToolkitAdditions.m */; };
 		B4192737180931A900CDA378 /* RDVMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4192736180931A900CDA378 /* RDVMenuViewController.m */; };
 		B42421BF1834271200B22E88 /* RDVMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B42421BE1834271200B22E88 /* RDVMenuCell.m */; };
@@ -33,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		62B313CB1834BB7500EBB68E /* RDVAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVAlertView.h; sourceTree = "<group>"; };
+		62B313CC1834BB7500EBB68E /* RDVAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDVAlertView.m; sourceTree = "<group>"; };
+		62B313CE18351B1200EBB68E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B401FC6B183170250089FC4C /* UIColor+RDVToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+RDVToolkitAdditions.h"; sourceTree = "<group>"; };
 		B401FC6C183170250089FC4C /* UIColor+RDVToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+RDVToolkitAdditions.m"; sourceTree = "<group>"; };
 		B4192735180931A900CDA378 /* RDVMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDVMenuViewController.h; sourceTree = "<group>"; };
@@ -82,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62B313CF18351B1200EBB68E /* QuartzCore.framework in Frameworks */,
 				B43C52061807F4C5004A50CE /* CoreGraphics.framework in Frameworks */,
 				B43C52081807F4C5004A50CE /* UIKit.framework in Frameworks */,
 				B43C52041807F4C5004A50CE /* Foundation.framework in Frameworks */,
@@ -148,6 +154,7 @@
 		B43C52021807F4C5004A50CE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				62B313CE18351B1200EBB68E /* QuartzCore.framework */,
 				B43C52031807F4C5004A50CE /* Foundation.framework */,
 				B43C52051807F4C5004A50CE /* CoreGraphics.framework */,
 				B43C52071807F4C5004A50CE /* UIKit.framework */,
@@ -208,6 +215,8 @@
 		B46385151809F95A00ED7454 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				62B313CB1834BB7500EBB68E /* RDVAlertView.h */,
+				62B313CC1834BB7500EBB68E /* RDVAlertView.m */,
 				B42421C01834273300B22E88 /* RDVCircularImageView.h */,
 				B42421C11834273300B22E88 /* RDVCircularImageView.m */,
 				B46385161809F95A00ED7454 /* RDVNotificationView.h */,
@@ -300,6 +309,7 @@
 				B46385221809F95A00ED7454 /* RDVTableViewController.m in Sources */,
 				B42421BF1834271200B22E88 /* RDVMenuCell.m in Sources */,
 				B463851E1809F95A00ED7454 /* UIFont+RDVToolkitAdditions.m in Sources */,
+				62B313CD1834BB7500EBB68E /* RDVAlertView.m in Sources */,
 				B42CD16118092F51004032A4 /* RDVAppDelegate.m in Sources */,
 				B401FC6D183170250089FC4C /* UIColor+RDVToolkitAdditions.m in Sources */,
 				B463851F1809F95A00ED7454 /* UITableViewCell+RDVToolkitAdditions.m in Sources */,
@@ -403,6 +413,7 @@
 		B43C522D1807F4C5004A50CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Example/RDVToolkit-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/RDVToolkit-Info.plist";
@@ -416,6 +427,7 @@
 		B43C522E1807F4C5004A50CE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Example/RDVToolkit-Prefix.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Example/RDVToolkit-Info.plist";
