@@ -1,4 +1,4 @@
-// RDVToolkit.h
+// RDVTableViewCell.h
 // RDVToolkit
 //
 // Copyright (c) 2013 Robert Dimitrov
@@ -21,20 +21,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-// Additions
-#import "RDVConstants.h"
-#import "UIFont+RDVToolkitAdditions.h"
-#import "UIDevice+RDVToolkitAdditions.h"
-#import "UIViewController+RDVToolkitAdditions.h"
-#import "UITableViewCell+RDVToolkitAdditions.h"
-#import "UIColor+RDVToolkitAdditions.h"
-// Controllers
-#import "RDVScrollViewController.h"
-#import "RDVTableViewController.h"
-// Views
-#import "RDVNotificationView.h"
-#import "RDVSelectionView.h"
-#import "RDVCircularImageView.h"
-#import "RDVAlertView.h"
-#import "RDVTableViewCell.h"
-#import "RDVActionSheet.h"
+#import <UIKit/UIKit.h>
+
+@interface RDVTableViewCell : UITableViewCell
+
+@property (nonatomic) UIScrollView *scrollView;
+@property (nonatomic) UIView *scrollViewButtonView;
+@property (nonatomic) UIView *scrollViewContentView;
+@property (nonatomic) UILabel *scrollViewLabel;
+
+- (void)setButtonsHidden:(BOOL)hidden animated:(BOOL)animated;
+
+@end

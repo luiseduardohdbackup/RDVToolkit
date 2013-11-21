@@ -40,7 +40,7 @@
         self.title = @"RDVToolkit";
         
         _elements = @[@"Display error message", @"Display success message", @"Display information message",
-                      @"Circular image", @"Show Alert View"];
+                      @"Circular image", @"Show Alert View", @"Reveal Cell"];
     }
     return self;
 }
@@ -71,6 +71,12 @@
             NSURL *url = [NSURL URLWithString:@"http://www.maxmotors.com/wp-content/uploads/2012/09/2014-Mustang-Under-Bridge.jpg"];
             [[(RDVMenuCell *)cell circularImageView] setImageWithURL:url];
         }
+    } else if (indexPath.row == 5) {
+        NSString *CellIdentifier = @"RevealCell";
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (!cell) {
+            cell = [[RDVTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        }
     } else {
         NSString *CellIdentifier = @"NormalCell";
         cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -79,7 +85,11 @@
         }
     }
     
-    [[cell textLabel] setText:[[self elements] objectAtIndex:indexPath.row]];
+    if ([cell isKindOfClass:[RDVTableViewCell class]]) {
+        [[(RDVTableViewCell *)cell scrollViewLabel] setText:[[self elements] objectAtIndex:indexPath.row]];
+    } else {
+        [[cell textLabel] setText:[[self elements] objectAtIndex:indexPath.row]];
+    }
     
     return cell;
 }
